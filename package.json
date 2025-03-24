@@ -1,0 +1,15 @@
+{
+  "name": "web2.5-ethereum",
+  "version": "1.0.0",
+  "description": "Instalamos el geth a partir de https://geth.ethereum.org/docs/install-and-build/installing-geth\r 2. Creamos una carpeta en el directorio curso llamada proyecto-Ethereum\r 3. Creamos dentro de la carpeta las carpetas con los nodos que queramos, llamándolos nodeX, donde x es 1,2,3,4,…\r 4. geth --datadir nodex account new –password pwd.txt\r 5. Generamos con puppeth el fichero genesis.json\r 6. Creación del hub donde los nodos van a encontrar los demás bootnode --genkey=boot.key\r 1. Ejecución bootnode --verbosity=9 --nodekey=boot.key\r 7. Para cada node geth --datadir nodex init genesis.json\r 8. Para cada nodo lanzamos\r geth \r --datadir ${DIR_NODE} directorio del nodo\r --networkid ${NETWORK_CHAINID}\r --syncmode full \r --http -–graphql --http.port ${HTTP_PORT} --http.api admin,eth,miner,net,txpool,personal,web3     apis disponibles y en que puerto va a escuchar\r --allow-insecure-unlock como hemos activado el http hay que permitir el unlock en la cuenta\r --unlock \"0x${CUENTA}\" la cuenta hay que hacerle el unlock para poder firmar\r --password ${DIR_NODE}/pwd con esta contraseña firma\r --port ${PORT} el puerto en el que va a escuchar el nodo\r --ipcpath cuando creamos el nodo1 hay que incluir un nuevo path en cada uno de los otros para que no nos de error de acceso denegado porque ya el path \\\\.\\pipe\\geth.ipc ya está usado por el nodo1\r --authrpc.port 1234 es necesario también para la autenticación de mas de un nodo, que no nos de problemas por usar el mismo puerto otra vez",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "web3": "^4.16.0"
+  }
+}
