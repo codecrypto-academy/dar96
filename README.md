@@ -23,3 +23,5 @@ docker run -d \
 
     Para checkear que todo va bien podemos hacer un curl para ver por qué bloque va la red:
     curl -X POST --data '{"jsonrpc": "2.0", "method":"eth_blockNumber", "params":[],"id":1}' -H 'Content-type: application/json' http://localhost:9999
+
+    Luego creamos el resto de los nodos
